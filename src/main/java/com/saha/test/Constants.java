@@ -25,11 +25,20 @@ public interface Constants {
 
     By tabHome = By.id("trendyol.com:id/tab_home");
 
-
     By txtSearchBoxId = By.id("trendyol.com:id/edittext_search_view");
     String productName= "jean";
 
-    String productNamePath="// android.widget.TextView[@resource-id='trendyol.com:id/tvCVProductGridBrand']";
+    String productNamePath="//android.widget.TextView[@resource-id='trendyol.com:id/tvCVProductGridBrand']";
 
+    By btnMenu = By.id("trendyol.com:id/imageview_action_start");
 
+    String menuFemale ="//android.widget.ImageView[@resource-id='trendyol.com:id/ivNavigationMenuItemImage']";
+
+    String navigationRightArrow = "//android.widget.ImageView[@resource-id='trendyol.com:id/ivNavigationRightArrow']";
+
+    String ivnavigationRightArrow = "//android.widget.ImageView[@resource-id='trendyol.com:id/ivNavigationRightArrow']";
+
+    String addProductFav ="//android.widget.CheckBox[@resource-id='trendyol.com:id/cbCVProductGridFav']";
+
+    By btnFavourites = By.id("trendyol.com:id/tab_favorites");
 }

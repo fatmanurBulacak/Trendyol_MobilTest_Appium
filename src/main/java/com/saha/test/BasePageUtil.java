@@ -27,6 +27,7 @@ public class BasePageUtil {
         this.driver = driver;
     }
 
+    //bekleme
     public void sleep(int waitTime){
         try {
             Thread.sleep(waitTime*1000);
@@ -36,6 +37,7 @@ public class BasePageUtil {
 
     }
 
+    //Hesap açma
     public void openMyAccount(By btnMyAccount,By btnStartShopping, String btnGender_Female){
 
 
@@ -56,6 +58,7 @@ public class BasePageUtil {
 
     }
 
+    //Giriş
     public void guestLogin(By btnBasketGuestLogin){
 
         WebDriverWait wait = new WebDriverWait(driver,20);
@@ -65,6 +68,7 @@ public class BasePageUtil {
 
     }
 
+    //email girme
     public void emailClickandSendKey(By txtEmail, String email){
 
         WebDriverWait wait = new WebDriverWait(driver,20);
@@ -73,6 +77,7 @@ public class BasePageUtil {
 
     }
 
+    //şifre girme
     public void passwordClickandSendKey(By txtPassword, String password){
 
         WebDriverWait wait = new WebDriverWait(driver,20);
@@ -81,7 +86,8 @@ public class BasePageUtil {
 
     }
 
-   public void clickLogin(By btnTYLogin, By btnNeverSavePassword){
+    //Login işlemi
+    public void clickLogin(By btnTYLogin, By btnNeverSavePassword){
         WebDriverWait wait = new WebDriverWait(driver,20);
         wait.until(ExpectedConditions.presenceOfElementLocated(btnTYLogin)).click();
 
@@ -96,14 +102,14 @@ public class BasePageUtil {
 
     }
 
-
+    //Anasayfa butonuna tıklama
     public void clickTabHome(By tabHome){
         WebDriverWait wait = new WebDriverWait(driver,20);
         wait.until(ExpectedConditions.presenceOfElementLocated(tabHome)).click();
 
     }
 
-
+    //Ürün arama
     public void txtSearchBoxClickAndSendKey(By txtSearchBoxId, String productName){
 
         WebDriverWait wait = new WebDriverWait(driver,10);
@@ -112,6 +118,7 @@ public class BasePageUtil {
 
     }
 
+    //Arama butonuna basma
     public void pressSearch(){
             new TouchAction(driver).tap(991,1682).perform();
 
@@ -153,6 +160,7 @@ public class BasePageUtil {
 
     }
 
+    //Ürüne tıklama
     public void clickProduct(String productNamePath){
         WebDriverWait wait= new WebDriverWait(driver, 20);
         //Tıklanacak haberi 20 saniye aramak için bekleyecek
@@ -161,7 +169,6 @@ public class BasePageUtil {
         list.get(1).click();
 
     }
-
 
     //Sağa kaydırma metodu
     public void swipeRight(){
@@ -194,5 +201,59 @@ public class BasePageUtil {
         driver.swipe(swipeStartWidth,swipeStartHeight,swipeEndWidth,swipeStartHeight,1000);
 
     }
+
+    //Menu butonuna basma
+    public void clickMenu(By btnMenu){
+
+        WebDriverWait wait = new WebDriverWait(driver,20);
+        wait.until(ExpectedConditions.presenceOfElementLocated(btnMenu)).click();
+
+
+
+    }
+
+    //Menü kadın tıklama
+    public void clickMenuFemale(String menuFemale){
+        WebDriverWait wait= new WebDriverWait(driver, 20);
+        //Tıklanacak haberi 20 saniye aramak için bekleyecek
+
+        List<WebElement> list = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(menuFemale)));
+        list.get(0).click();
+
+    }
+
+    //Menu kadın giyim tıklama
+    public void clickNavigationRightArrow(String navigationRightArrow){
+        WebDriverWait wait= new WebDriverWait(driver, 20);
+        //Tıklanacak haberi 20 saniye aramak için bekleyecek
+
+        List<WebElement> list = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(navigationRightArrow)));
+        list.get(0).click();
+
+    }
+
+    public void clickivnavigationRightArrow(String ivnavigationRightArrow){
+
+        WebDriverWait wait = new WebDriverWait(driver,20);
+        List<WebElement> list = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(ivnavigationRightArrow)));
+        list.get(0).click();
+
+    }
+
+    public void addProductFav(String addProductFav){
+
+        WebDriverWait wait = new WebDriverWait(driver,20);
+        List<WebElement> list = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(addProductFav)));
+        list.get(0).click();
+
+    }
+
+    //Favoriler butonuna tıklama
+    public void clickMyFavourites(By btnFavourites){
+        WebDriverWait wait = new WebDriverWait(driver,20);
+        wait.until(ExpectedConditions.presenceOfElementLocated(btnFavourites)).click();
+
+    }
+
 
 }
